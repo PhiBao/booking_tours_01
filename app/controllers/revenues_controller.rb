@@ -3,6 +3,6 @@ class RevenuesController < ApplicationController
   before_action :admin_user
 
   def index  
-    @revenues = Booking.where(status: "paid")
+    @revenues = Booking.paid
   end
 end

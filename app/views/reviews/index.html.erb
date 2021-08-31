@@ -38,7 +38,7 @@
           <tr>
             <th>#</th>
             <th><%= t "reviews.shared.name" %></th>
-            <th><%= t "reviews.shared.images" %></th>
+            <th><%= t "reviews.shared.image" %></th>
             <th><%= t "reviews.shared.content" %></th>
             <th><%= t "reviews.shared.category" %></th>
             <th></th>
@@ -52,7 +52,7 @@
               <td><%= link_to (truncate review.review_name, length: 20), review, target: "_blank" %></td>
               <td>
                 <% if review.image.attached? %>
-                  <%= image_tag review.image, width: "50px" %>
+                  <%= link_to image_tag(review.image, width: "50px"), review, target: "_blank" %>
                 <% end %>
               </td>
               <td><%= truncate review.review_content, length: 30 %></td>

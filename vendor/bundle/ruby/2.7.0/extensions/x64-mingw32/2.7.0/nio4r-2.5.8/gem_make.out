@@ -1,0 +1,14 @@
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20210828-13056-1mp4627.rb extconf.rb
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" install
+make: Nothing to be done for 'install'.

@@ -1,6 +1,6 @@
 <div class="tags">
 	<h4 class="tag_head"><%= t "global.tags" %></h4>
-  <% if @tags.any? %> 
+  <% if @tags&.any? %> 
 	<ul class="tags_links">
       <%= render partial: "tags/tag", collection: @tags %>
   </ul>

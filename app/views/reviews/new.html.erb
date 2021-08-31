@@ -1,8 +1,10 @@
 <% provide(:title, t("reviews.new.title")) %>
 <% provide(:button_label, t("reviews.new.create")) %>
-<div class="row d-flex justify-content-center mt-4">
-  <h3><%=t("review.new.title")%></h3>
-</div>
 <div class="container">
-  <%= render "reviews/form" %>
+  <div class="row d-flex justify-content-center mt-4">
+    <h3><%=t("review.new.title")%></h3>
+  </div>
+  <div class="container">
+    <%= render "reviews/form" %>
+  </div>
 </div>

@@ -18,6 +18,7 @@ en:
       truncate: "…" 
   date: 
     formats:
+      short: "%d"
       by_day: "%b %d"
       by_month: "%b %Y"
       long: "%A, %d/%m/%Y"
@@ -41,6 +42,7 @@ en:
     all: "All "
     search: "Search by name: "
     tags: "Tags Widget"
+    statistics: "Statistics"
     week_tags: "Most Hot Tags In Week"
     month_tags: "Most Hot Tags In Month"
   users:
@@ -123,6 +125,8 @@ en:
       category:
         category_name: "Category Name"
         parent_id: "Belongs to"
+      tag:
+        tag_name: "Tag Name"
   sessions:
     new:
       login: "Log in"
@@ -146,7 +150,7 @@ en:
       revenues: "Revenues"
       reviews: "Reviews"
       categories: "Categories"
-      comments: "Comments"
+      tags: "Tags"
   staticpages:
     home:
       home: "Home"
@@ -203,8 +207,6 @@ en:
     index:
       tourlist: "All tour"
       searchalert: "Tour not found!"
-      previous: "Previous"
-      next: "Next"
       new: "Created success!"
       create: "Create tour"
       updated: "Updated success!"
@@ -275,9 +277,25 @@ en:
       button: "Save"
       success: "Updated successfully"
     index:
-      manage: "Manage Category"
+      manage: "Manage Categories"
       name: "Name"
       parent: "Belongs to"
+    destroy:
+      success: "Deleted successfully"
+    shared:  
+      fail: "Error! An error occurred. Please try again later"
+  tags:
+    new:
+      title: "Add Tag"
+      button: "Create"
+      success: "Created successfully"
+    edit:
+      title: "Edit Tag"
+      button: "Save"
+      success: "Updated successfully"
+    index:
+      manage: "Manage Tags"
+      name: "Name"
     destroy:
       success: "Deleted successfully"
     shared:  

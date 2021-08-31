@@ -24,7 +24,7 @@ class Tour < ApplicationRecord
     if term.nil?
       all
     else
-      __elasticsearch__.search(term)
+      __elasticsearch__.search(term).records
     end
   end
 end

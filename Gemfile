@@ -12,12 +12,13 @@ gem "stripe",                     "< 6.0", ">= 2.8"
 gem "devise"
 gem "caxlsx_rails"
 gem "faker",                      ">= 2.1.2"
+gem "sidekiq",                    "~> 5.2.8"
+gem "config"
 gem "kaminari"
 gem "bootstrap4-kaminari-views"
 gem "elasticsearch-model"
 gem "elasticsearch-rails"
-gem "sidekiq"
-gem "config"
+gem "elasticsearch",              "< 7.14"
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
@@ -58,6 +59,7 @@ end
 group :production do
   gem "pg",         "~> 1.2.3"
   gem "aws-sdk-s3", ">= 1.46.0", require: false
+  gem "bonsai-elasticsearch-rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

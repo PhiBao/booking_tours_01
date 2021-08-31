@@ -12,14 +12,14 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <%= link_to root_path, :class => 'nav-link' do %>
+            <%= link_to root_path, class: "nav-link" do %>
               <i class="fas fa-home"></i>
               <%=t("staticpages.home.home")%> <span class="sr-only">(current)</span>
             <% end %>
           </li>
 
           <li class="nav-item">
-            <%= link_to tours_path, class:"nav-link" do %>
+            <%= link_to tours_path, class: "nav-link" do %>
               <i class="fas fa-suitcase"></i>
               <%= t("staticpages.home.tour") %>
             <% end %>
@@ -43,29 +43,29 @@
                   <%= t "admin.shared.manage" %>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                  <%= link_to users_path, class:"dropdown-item" do %>
+                  <%= link_to users_path, class: "dropdown-item" do %>
                     <i class="fas fa-users-cog"></i>
                     <%= t("admin.shared.users") %>
                   <% end %>
-                  <%= link_to admin_tours_path, class:"dropdown-item" do %>
+                  <%= link_to admin_tours_path, class: "dropdown-item" do %>
                     <i class="fas fa-suitcase-rolling"></i>
                     Tours
                   <% end %>
-                  <%= link_to revenues_path, class:"dropdown-item" do %>
+                  <%= link_to revenues_path, class: "dropdown-item" do %>
                     <i class="fas fa-money-check"></i>
                     <%= t("admin.shared.revenues") %>
                   <% end %>
-                  <%= link_to reviews_path, class:"dropdown-item" do %>
+                  <%= link_to reviews_path, class: "dropdown-item" do %>
                     <i class="far fa-sticky-note"></i>
-                    <%= t("admin.shared.review") %>
+                    <%= t("admin.shared.reviews") %>
                   <% end %>
-                  <%= link_to comments_path, class:"dropdown-item" do %>
-                    <i class="fas fa-comments"></i>
-                    <%= t("admin.shared.comments") %>
-                  <% end %>
-                  <%= link_to categories_path, class:"dropdown-item" do %>
+                  <%= link_to categories_path, class: "dropdown-item" do %>
                     <i class="fas fa-poll-h"></i>
                     <%= t("admin.shared.categories") %>
+                  <% end %>
+                  <%= link_to tags_path, class: "dropdown-item" do %>
+                    <i class="fas fa-tags"></i>
+                    <%= t("admin.shared.tags") %>
                   <% end %>
                 </div>
               </li>
@@ -93,8 +93,13 @@
                       <i class="fas fa-id-badge"></i>
                       <%= t("staticpages.home.reviews") %>
                     <% end %>
-                  <%end%>
-                <%end%>
+                  <% else %>
+                    <%= link_to statistics_path, class: "dropdown-item" do %>
+                      <i class="fas fa-chart-bar"></i>
+                      <%= t("global.statistics") %>
+                    <% end %>
+                  <% end %>
+                <% end %>
                 <div class="dropdown-divider"></div>
                 <%= link_to logout_path, method: :delete, class: "dropdown-item" do %>
                   <i class="fas fa-sign-out-alt"></i>
@@ -104,13 +109,13 @@
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to login_path, class:"nav-link" do %>
+              <%= link_to login_path, class: "nav-link" do %>
                 <i class="fas fa-sign-in-alt"></i>
                 <%= t("staticpages.home.signin") %>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to signup_path, class:"nav-link" do %>
+              <%= link_to signup_path, class: "nav-link" do %>
                 <i class="fas fa-user-plus"></i>
                 <%= t("staticpages.home.signup") %>
               <% end %>
@@ -122,8 +127,8 @@
               <%= t "global.lang" %> <span class="caret"></span>
             </a>
             <div class="dropdown-menu lang" aria-labelledby="navbarDropdown4">
-              <%= link_to "EN", {locale:"en"}, {class:"dropdown-item"} %>
-              <%= link_to "VI", {locale:"vi"}, {class:"dropdown-item"} %>
+              <%= link_to "EN", {locale:"en"}, {class: "dropdown-item"} %>
+              <%= link_to "VI", {locale:"vi"}, {class: "dropdown-item"} %>
             </div>
           </li>
           <% if logged_in? %>

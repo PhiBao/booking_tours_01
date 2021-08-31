@@ -11,7 +11,8 @@ vi:
         unit: "đồng"
   date:
     formats:
-      by_day: "%d %b "
+      short: "%d"
+      by_day: "%d %b"
       by_month: "%b %Y"
       long: "%A, %d/%m/%Y"
   views:
@@ -40,6 +41,7 @@ vi:
     lang: "VI"
     all: "Tất cả "
     search: "Tìm kiếm theo tên: "
+    statistics: "Thống kê"
     tags: "Từ khóa đính kèm"
     week_tags: "Hot nhất trong tuần"
     month_tags: "Hot nhất trong tháng"
@@ -123,6 +125,8 @@ vi:
       category:
         category_name: "Tên Thể loại"
         parent_id: "Thuộc về"
+      tag:
+        tag_name: "Từ khóa"
   sessions:
     new:
       login: "Đăng Nhập"
@@ -146,7 +150,7 @@ vi:
       revenues: "Doanh thu"
       reviews: "Review"
       categories: "Danh mục"
-      comments: "Bình luận"
+      tags: "Từ khóa"
   staticpages:
     home:
       home: "Trang chủ"
@@ -203,8 +207,6 @@ vi:
     index:
       tourlist: "Danh sách tour"
       searchalert: "Không có tour nào được tìm thấy"
-      previous: "Trước"
-      next: "Sau"
       new: "Đã thêm tour thành công!"
       create: "Thêm tour"
       updated: "Cập nhật thành công!"
@@ -277,6 +279,23 @@ vi:
     index:
       name: "Tên"
       manage: "Quản lí Thể loại"
+      parent: "Thuộc về"
+    destroy:
+      success: "Đã xóa thành công!"
+    shared: 
+      fail: "Đã xảy ra lỗi!"
+  tags:
+    new:
+      title: "Thêm Từ khóa"
+      button: "Thêm"
+      success: "Đã tạo thành công!"
+    edit:
+      title: "Sửa Từ khóa"
+      button: "Lưu"
+      success: "Đã sửa thành công!"
+    index:
+      name: "Tên"
+      manage: "Quản lí Từ khóa"
       parent: "Thuộc về"
     destroy:
       success: "Đã xóa thành công!"

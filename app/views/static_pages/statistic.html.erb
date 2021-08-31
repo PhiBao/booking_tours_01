@@ -110,10 +110,10 @@
   <hr class="mt-5 mb-5">
 
   <div class="row mt-3 pt-3">
-    <%= line_chart [{name: t("statistics.this"), data: @revenues.statistic_at(Date.today).group_by_week(:updated_at,
-                                         format: t("date.formats.by_day")).sum(:total)},
-                    {name: t("statistics.last"), data: @revenues.statistic_at(1.month.ago).group_by_week(:updated_at,
-                                         format: t("date.formats.by_day")).sum(:total)}],
+    <%= line_chart [{name: t("statistics.this"), data: @revenues.sum_at(Date.today).group_by_week(:updated_at,
+                                         format: t("date.formats.short")).sum(:total)},
+                    {name: t("statistics.last"), data: @revenues.sum_at(1.month.ago).group_by_week(:updated_at,
+                                         format: t("date.formats.short")).sum(:total)}],
                     height: "20rem", suffix: "$",
                     ytitle: t("chart.y_title"),  title: t("statistics.revenues"),
                     messages: { empty: t("chart.empty") } %>  

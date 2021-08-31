@@ -7,9 +7,9 @@ class ReviewsController < ApplicationController
 
   def index
     if current_user.admin?
-      reviews = Review.search(params[:term])
+      reviews = Review.load(params[:term])
     else
-      reviews = Review.search(params[:term]).where(user_id: current_user.id)
+      reviews = Review.load(params[:term]).where(user_id: current_user.id)
     end
 
     if (params[:page].blank?)

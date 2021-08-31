@@ -1,10 +1,52 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Statistics") do |sheet|
+  sheet.merge_cells "A1:B1"
   sheet.add_row ["Statistics at #{Date.today}"]
   @res.each do |key, value|
     sheet.add_row [format_string(key), value]
   end
+  sheet.add_row ["Revenues in this month", @revenues.sum_at(Date.today).sum(:total)]
+  sheet.add_row ["Revenues in last month", @revenues.sum_at(1.month.ago).sum(:total)]
 
-  sheet.add_row ["Revenues in this month", @revenues.statistic_at(Date.today).sum(:total)]
-  sheet.add_row ["Revenues in last month", @revenues.statistic_at(1.month.ago).sum(:total)]
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D2", :end_at => "L9") do |chart|
+    chart.add_series :data => sheet["B2:B3"], :labels => sheet["A2:A3"], 
+    :title => t("statistics.ratings"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
+
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D10", :end_at => "L17") do |chart|
+    chart.add_series :data => sheet["B4:B5"], :labels => sheet["A4:A5"], 
+    :title => t("statistics.reviews"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
+
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D18", :end_at => "L25") do |chart|
+    chart.add_series :data => sheet["B6:B7"], :labels => sheet["A6:A7"], 
+    :title => t("statistics.likes"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
+
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D26", :end_at => "L33") do |chart|
+    chart.add_series :data => sheet["B8:B9"], :labels => sheet["A8:A9"], 
+    :title => t("statistics.comments"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
+
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D34", :end_at => "L41") do |chart|
+    chart.add_series :data => sheet["B10:B11"], :labels => sheet["A10:A11"], 
+    :title => t("statistics.users"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
+
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D42", :end_at => "L49") do |chart|
+    chart.add_series :data => sheet["B12:B13"], :labels => sheet["A12:A13"], 
+    :title => t("statistics.tours"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
+
+  sheet.add_chart(Axlsx::Bar3DChart, :start_at => "D50", :end_at => "L57") do |chart|
+    chart.add_series :data => sheet["B14:B15"], :labels => sheet["A14:A15"], 
+    :title => t("statistics.revenues"), 
+    :colors => ["FF0000", "FFFF00"]
+  end
 end

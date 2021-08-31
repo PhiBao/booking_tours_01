@@ -1,0 +1,53 @@
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/win32console-1.3.2/ext/Console_ext
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20210828-13056-sniek7.rb extconf.rb
+creating Makefile
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/win32console-1.3.2/ext/Console_ext
+make "DESTDIR=" clean
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/win32console-1.3.2/ext/Console_ext
+make "DESTDIR="
+generating Console_ext-x64-mingw32.def
+compiling Console.c
+In file included from C:/Ruby27-x64/include/ruby-2.7.0/ruby/win32.h:41,
+                 from C:/Ruby27-x64/include/ruby-2.7.0/ruby/defines.h:371,
+                 from C:/Ruby27-x64/include/ruby-2.7.0/ruby/ruby.h:29,
+                 from C:/Ruby27-x64/include/ruby-2.7.0/ruby.h:33,
+                 from Console.c:2:
+C:/Ruby27-x64/msys64/mingw64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+Console.c: In function 'rb_GetConsoleWindow':
+Console.c:197:34: warning: passing argument 1 of 'PtrToUlong' makes pointer from integer without a cast [-Wint-conversion]
+  197 |    unsigned long h = PtrToUlong( GetConsoleOutputCP() );
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  UINT {aka unsigned int}
+In file included from C:/Ruby27-x64/msys64/mingw64/x86_64-w64-mingw32/include/winnt.h:150,
+                 from C:/Ruby27-x64/msys64/mingw64/x86_64-w64-mingw32/include/minwindef.h:163,
+                 from C:/Ruby27-x64/msys64/mingw64/x86_64-w64-mingw32/include/windef.h:9,
+                 from C:/Ruby27-x64/msys64/mingw64/x86_64-w64-mingw32/include/windows.h:69,
+                 from Console.c:1:
+C:/Ruby27-x64/msys64/mingw64/x86_64-w64-mingw32/include/basetsd.h:72:61: note: expected 'const void *' but argument is of type 'UINT' {aka 'unsigned int'}
+   72 |   static __inline unsigned __LONG32 PtrToUlong (const void *p) { return ((unsigned __LONG32) (ULONG_PTR) p); }
+      |                                                 ~~~~~~~~~~~~^
+In file included from C:/Ruby27-x64/include/ruby-2.7.0/ruby.h:33,
+                 from Console.c:2:
+Console.c: In function 'define_constants':
+Console.c:748:53: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  748 |    rb_define_const(rb_mConstants, #NAME, ULONG2NUM( (ULONG)NAME ) );
+      |                                                     ^
+C:/Ruby27-x64/include/ruby-2.7.0/ruby/ruby.h:1630:45: note: in definition of macro 'RB_ULONG2NUM'
+ 1630 | #define RB_ULONG2NUM(x) rb_ulong2num_inline(x)
+      |                                             ^
+Console.c:748:42: note: in expansion of macro 'ULONG2NUM'
+  748 |    rb_define_const(rb_mConstants, #NAME, ULONG2NUM( (ULONG)NAME ) );
+      |                                          ^~~~~~~~~
+Console.c:753:4: note: in expansion of macro 'DEF_SELF_CONST'
+  753 |    DEF_SELF_CONST(  INVALID_HANDLE_VALUE      );
+      |    ^~~~~~~~~~~~~~
+linking shared-object Console_ext.so
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/win32console-1.3.2/ext/Console_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 Console_ext.so ./.gem.20210828-13056-risyns

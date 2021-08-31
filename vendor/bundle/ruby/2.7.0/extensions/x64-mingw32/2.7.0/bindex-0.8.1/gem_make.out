@@ -1,0 +1,16 @@
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20210828-13056-134crav.rb extconf.rb
+creating Makefile
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+generating cruby-x64-mingw32.def
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: D:/Learning/Intership/Ruby on Rails/Basic_Project/booking_tours_01/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20210828-13056-qwjnmd/skiptrace/internal

@@ -15,7 +15,7 @@ class RatingsController < ApplicationController
                               stars: rating_params[:stars])
     end
     
-    if errors.length > 0
+    if errors.size > 0
       render json: {success: false, errors: errors}
     else
       render json: {success: true, stars: @rating.stars}

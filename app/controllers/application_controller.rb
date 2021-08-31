@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :populate_nav_vars
+  before_action :populate_tags
   include SessionsHelper
   
   private
 
-    # Avoid params blank
+    # Avoid params blank error
     def tours_index_helper
       tours = Tour.load(params[:term])
       if (params[:page].blank?)
@@ -14,7 +15,8 @@ class ApplicationController < ActionController::Base
         @tours = tours.page(params[:page]).per(Settings.Paginate.tours_per_page)
       end
     end
-    
+
+    # Multi-level menu
     def populate_nav_vars
       @nav_items = Category.top_level
     end

@@ -4,8 +4,8 @@ module ToursHelper
   end
 
   def avg tour
-    count = tour.ratings.passed.count
-    avg = count > 0 ? (tour.ratings.passed.sum(:stars) / count.to_f) : 0
+    count = tour.ratings.passed.size
+    avg = count > 0 ? (tour.ratings.passed.sum(:stars) / count).to_f : 0
   end
 
   def time_helper time
@@ -16,9 +16,5 @@ module ToursHelper
   def time_short time
     arr = time.split('/')
     arr[0] + t("bookings.shared.day") + arr[1] + t("bookings.shared.night")
-  end
-
-  def images id
-   Tour.all.find(id).images
   end
 end

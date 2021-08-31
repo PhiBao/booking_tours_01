@@ -1,4 +1,9 @@
+require 'elasticsearch/model'
+
 class Review < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  
   enum status: { appear: true, hide: false }
   has_many :notifications, as: :notifiable
   belongs_to :category
@@ -12,18 +17,19 @@ class Review < ApplicationRecord
                     content_type: [:png, :jpg, :jpeg],
                     size:         { less_than: 5.megabytes}
   scope :user_like, ->(user){where(user_id: user)}
-  scope :name_like, ->(name){where "review_name ILIKE ?", "%#{name}%"}
   # filter review
   def liked?(user)
     !!self.like_reviews.find{|like| like.user_id==user.id}
   end
 
-  # search tour 
-  def self.search(term)
+  # search review 
+  def self.load(term)
     if term.nil?
       all
     else
-      name_like(term)
+      __elasticsearch__.search(term).records
     end
   end
 end
+# for auto sync model with elastic search
+Review.import 

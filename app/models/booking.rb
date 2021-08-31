@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
 
   validates :total, presence: true, numericality: {greater_than: 0, less_than: 10000000}
   validates :date_begin, presence: true
-  validates :children, presence: true, numericality: {greater_than: 0, less_than: 100}
+  validates :children, presence: true, numericality: {greater_than_or_equal_to: 0, less_than: 100}
   validates :adults, presence: true, numericality: {greater_than: 0, less_than: 100}
   scope :by_year,  -> (year){ where "extract(year FROM updated_at) = ?", "%#{year}%" }
   scope :by_month, -> (month){ where "extract(month FROM updated_at) = ?", "%#{month}%" }
@@ -22,7 +22,7 @@ class Booking < ApplicationRecord
 
   after_create do
     product = Stripe::Product.create(name: self.tour.tour_name)
-    price = Stripe::Price.create(product: product, unit_amount: self.total, currency: self.currency)
+    price = Stripe::Price.create(product: product, unit_amount: self.total * 100, currency: self.currency)
     update(stripe_product_id: product.id, stripe_price_id: price.id)
   end
 end

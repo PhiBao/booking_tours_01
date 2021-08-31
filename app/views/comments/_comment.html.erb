@@ -32,7 +32,7 @@
       <% end %>
       <% if comment.replies.any? %>
         <% comment.replies.each do |reply| %> 
-          <% if reply.appear? %> 
+          <% if (current_user&.admin?) || reply.appear? %> 
             <%= render partial: "comments/reply", locals: { reply: reply } %>
           <% end %>
         <% end %>

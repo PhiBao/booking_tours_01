@@ -10,7 +10,7 @@ module TagsHelper
   end
 
   def most_month
-    popular = TagHelper.this_month.group(:tag_id).order(count_tag_id: :desc).count(:tag_id)
+    popular = TagHelper.statistic_at(Date.today).group(:tag_id).order(count_tag_id: :desc).count(:tag_id)
     res = []
     popular.each do |k, v|
       res << Tag.find(k)

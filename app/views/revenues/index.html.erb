@@ -18,8 +18,8 @@
   </div>
 <% end %>
 <% if params[:month]&.present? && params[:year]&.present? %>
-  <%= line_chart @revenues.where("cast(strftime('%m', updated_at) as int) = ?", params[:month])
-                          .where("cast(strftime('%Y', updated_at) as int) = ?", params[:year])
+  <%= line_chart @revenues.where("extract(month from updated_at) = ?", params[:month])
+                          .where("extract(year from updated_at) = ?", params[:year])
                           .group_by_day_of_month(:updated_at, format: t("date.formats.by_day")).sum(:total),
                           height: "20rem", suffix: "$",
                           ytitle: t("chart.y_title"), title: t("chart.title") + "#{params[:month]}/#{params[:year]}",
