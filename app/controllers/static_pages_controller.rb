@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :statistics_data, only: [:statistic]
   before_action :load_review_category, only: [:reviews_about]
 
   def home
