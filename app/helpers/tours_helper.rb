@@ -17,4 +17,8 @@ module ToursHelper
     arr = time.split('/')
     arr[0] + t("bookings.shared.day") + arr[1] + t("bookings.shared.night")
   end
+
+  def images id
+   Tour.all.find(id).images
+  end
 end
